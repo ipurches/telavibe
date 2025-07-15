@@ -5,7 +5,9 @@ import {
   insertContactSchema, 
   insertEventSchema, 
   insertGallerySchema, 
-  insertTestimonialSchema 
+  insertTestimonialSchema,
+  insertMenuItemSchema,
+  insertMusicTrackSchema
 } from "@shared/schema";
 import { z } from "zod";
 
@@ -104,6 +106,56 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       if (error instanceof z.ZodError) {
         res.status(400).json({ message: "Invalid testimonial data", errors: error.errors });
+      } else {
+        res.status(500).json({ message: "Internal server error" });
+      }
+    }
+  });
+
+  // Get menu items
+  app.get("/api/menu", async (req, res) => {
+    try {
+      const menuItems = await storage.getMenuItems();
+      res.json(menuItems);
+    } catch (error) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Add menu item (admin only)
+  app.post("/api/menu", async (req, res) => {
+    try {
+      const menuItemData = insertMenuItemSchema.parse(req.body);
+      const menuItem = await storage.createMenuItem(menuItemData);
+      res.json(menuItem);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Invalid menu item data", errors: error.errors });
+      } else {
+        res.status(500).json({ message: "Internal server error" });
+      }
+    }
+  });
+
+  // Get music tracks
+  app.get("/api/music", async (req, res) => {
+    try {
+      const musicTracks = await storage.getMusicTracks();
+      res.json(musicTracks);
+    } catch (error) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Add music track (admin only)
+  app.post("/api/music", async (req, res) => {
+    try {
+      const musicTrackData = insertMusicTrackSchema.parse(req.body);
+      const musicTrack = await storage.createMusicTrack(musicTrackData);
+      res.json(musicTrack);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Invalid music track data", errors: error.errors });
       } else {
         res.status(500).json({ message: "Internal server error" });
       }

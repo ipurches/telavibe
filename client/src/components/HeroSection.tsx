@@ -33,7 +33,7 @@ export function HeroSection() {
             <div className="flex items-center space-x-6 text-blue-100">
               <div className="flex items-center space-x-2">
                 <MapPin className="h-5 w-5" />
-                <span>Larnaca, Cyprus</span>
+                <span>Beach Front, Larnaca, Cyprus</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5" />
@@ -44,8 +44,8 @@ export function HeroSection() {
           
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Mediterranean celebration with people dancing" 
+              src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+              alt="Beautiful beach front celebration in Cyprus" 
               className="rounded-2xl shadow-2xl floating-element w-full" 
             />
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl">

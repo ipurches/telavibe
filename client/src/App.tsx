@@ -36,7 +36,7 @@ function App() {
   };
 
   const t = (key: string) => {
-    return translations[language][key] || key;
+    return translations[language][key as keyof typeof translations[typeof language]] || key;
   };
 
   return (

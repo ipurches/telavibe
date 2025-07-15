@@ -74,7 +74,7 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-white mb-4">{t('footer.contact')}</h4>
             <ul className="space-y-2 text-blue-100">
-              <li>Larnaca, Cyprus</li>
+              <li>Beach Front, Larnaca, Cyprus</li>
               <li>+357 XX XXX XXX</li>
               <li>telavibes4@gmail.com</li>
               <li>Mon-Sun: 9:00-22:00</li>

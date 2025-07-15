@@ -214,7 +214,7 @@ export function ContactSection() {
                     </div>
                     <div>
                       <div className="font-semibold">{t('contact.office_location')}</div>
-                      <div className="text-blue-100">Larnaca, Cyprus</div>
+                      <div className="text-blue-100">Beach Front, Larnaca, Cyprus</div>
                     </div>
                   </div>
                   
