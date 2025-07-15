@@ -21,6 +21,8 @@ import {
   type MusicTrack,
   type InsertMusicTrack
 } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -460,4 +462,96 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+export class DatabaseStorage implements IStorage {
+  async getUser(id: number): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
+    return user;
+  }
+
+  async createContact(insertContact: InsertContact): Promise<Contact> {
+    const [contact] = await db
+      .insert(contacts)
+      .values(insertContact)
+      .returning();
+    return contact;
+  }
+
+  async getContacts(): Promise<Contact[]> {
+    return await db.select().from(contacts);
+  }
+
+  async getEvents(): Promise<Event[]> {
+    return await db.select().from(events);
+  }
+
+  async createEvent(insertEvent: InsertEvent): Promise<Event> {
+    const [event] = await db
+      .insert(events)
+      .values(insertEvent)
+      .returning();
+    return event;
+  }
+
+  async getGallery(): Promise<Gallery[]> {
+    return await db.select().from(gallery);
+  }
+
+  async createGalleryItem(insertGallery: InsertGallery): Promise<Gallery> {
+    const [galleryItem] = await db
+      .insert(gallery)
+      .values(insertGallery)
+      .returning();
+    return galleryItem;
+  }
+
+  async getTestimonials(): Promise<Testimonial[]> {
+    return await db.select().from(testimonials);
+  }
+
+  async createTestimonial(insertTestimonial: InsertTestimonial): Promise<Testimonial> {
+    const [testimonial] = await db
+      .insert(testimonials)
+      .values(insertTestimonial)
+      .returning();
+    return testimonial;
+  }
+
+  async getMenuItems(): Promise<MenuItem[]> {
+    return await db.select().from(menuItems);
+  }
+
+  async createMenuItem(insertMenuItem: InsertMenuItem): Promise<MenuItem> {
+    const [menuItem] = await db
+      .insert(menuItems)
+      .values(insertMenuItem)
+      .returning();
+    return menuItem;
+  }
+
+  async getMusicTracks(): Promise<MusicTrack[]> {
+    return await db.select().from(musicTracks);
+  }
+
+  async createMusicTrack(insertMusicTrack: InsertMusicTrack): Promise<MusicTrack> {
+    const [musicTrack] = await db
+      .insert(musicTracks)
+      .values(insertMusicTrack)
+      .returning();
+    return musicTrack;
+  }
+}
+
+export const storage = new DatabaseStorage();

@@ -22,7 +22,7 @@ Preferred communication style: Simple, everyday language.
 ### Backend Architecture
 - **Runtime**: Node.js with Express.js framework
 - **Language**: TypeScript with ES modules
-- **Database**: PostgreSQL with Neon serverless database
+- **Database**: PostgreSQL with Neon serverless database (DatabaseStorage implementation)
 - **ORM**: Drizzle ORM for type-safe database operations
 - **Validation**: Zod for schema validation and type safety
 - **Session Management**: Express sessions with PostgreSQL store
@@ -99,3 +99,13 @@ RESTful API endpoints:
 - **Music Integration**: Cultural music player component (UI only)
 
 The architecture prioritizes type safety, performance, and cultural authenticity while maintaining a clean separation between frontend presentation and backend business logic.
+
+## Recent Changes
+
+### Database Migration (July 15, 2025)
+- **Migration**: Successfully migrated from in-memory storage (MemStorage) to PostgreSQL database (DatabaseStorage)
+- **Implementation**: Created database connection with Neon serverless PostgreSQL using Drizzle ORM
+- **Schema**: All existing tables (users, contacts, events, gallery, testimonials, menuItems, musicTracks) migrated to PostgreSQL
+- **Seeding**: Database populated with sample data for all sections including authentic Mediterranean menu items, traditional music tracks, and cultural event data
+- **API Integration**: All API endpoints now use persistent database storage with proper error handling
+- **Performance**: Database queries optimized with proper indexing and type safety through Drizzle ORM
