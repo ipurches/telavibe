@@ -44,8 +44,8 @@ export function HeroSection() {
           
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Beautiful beach front celebration in Cyprus" 
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+              alt="Beautiful beach sunset in Cyprus" 
               className="rounded-2xl shadow-2xl floating-element w-full" 
             />
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl">

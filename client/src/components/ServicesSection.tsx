@@ -11,7 +11,7 @@ export function ServicesSection() {
       icon: <Heart className="h-6 w-6" />,
       title: t('services.weddings'),
       description: 'Traditional Jewish and Greek Orthodox ceremonies with authentic customs, kosher catering, and Mediterranean music.',
-      image: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400',
+      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400',
       color: 'text-israeli-blue',
       bgColor: 'bg-israeli-blue',
       features: ['Kosher Certified', 'Traditional Customs', 'Mediterranean Music']
@@ -20,7 +20,7 @@ export function ServicesSection() {
       icon: <Building2 className="h-6 w-6" />,
       title: t('services.corporate'),
       description: 'Professional gatherings with cultural entertainment, team building activities, and authentic Mediterranean dining experiences.',
-      image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400',
+      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400',
       color: 'text-greek-blue',
       bgColor: 'bg-greek-blue',
       features: ['10-500 guests', 'Full service', 'Cultural Entertainment']
@@ -29,7 +29,7 @@ export function ServicesSection() {
       icon: <Music className="h-6 w-6" />,
       title: t('services.celebrations'),
       description: 'Holiday celebrations, cultural festivals, and traditional ceremonies with authentic music, dance, and culinary experiences.',
-      image: 'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400',
+      image: 'https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400',
       color: 'text-orange',
       bgColor: 'bg-orange',
       features: ['Traditional Music', 'Dance Performances', 'Authentic Cuisine']
